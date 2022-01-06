@@ -31,6 +31,11 @@ if (screen.width >= 768) {
 		loadExternalResource(live2d_path + "live2d.min.js", "js"),
 		loadExternalResource(live2d_path + "waifu-tips.js", "js")
 	]).then(() => {
+		/* 可直接修改部分参数 */
+		live2d_settings['hitokotoAPI'] = 'hitokoto.cn';  // 一言 API
+		live2d_settings['modelId'] = 5;                  // 默认模型 ID
+		live2d_settings['modelTexturesId'] = 1;          // 默认材质 ID
+		live2d_settings['modelStorage'] = false;         // 不储存模型 ID
 		initWidget({
 			waifuPath: live2d_path + "waifu-tips.json",
 			//apiPath: "https://live2d.fghrsh.net/api/",
@@ -41,10 +46,11 @@ if (screen.width >= 768) {
 // initWidget 第一个参数为 waifu-tips.json 的路径，第二个参数为 API 地址
 // API 后端可自行搭建，参考 https://github.com/fghrsh/live2d_api
 // 初始化看板娘会自动加载指定目录下的 waifu-tips.json
+//更新   js  2022/1/6
 
-console.log(`
-    —— _	      ·——
-  く__,.ヘヽ.        /  ,ー､ 〉
+console.log(
+`   ----、			   - -	
+  く__,.ヘヽ.        / ,ー､ 〉
            ＼ ', !-─‐-i  /  /´
            ／｀ｰ'       L/／｀ヽ､
          /   ／,   /|   ,   ,       ',
